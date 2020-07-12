@@ -1,0 +1,160 @@
+<!-- <form #form="ngForm" (submit)="onSubmit(form)" autocomplete="off"> 
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label>First Name</label>
+                <input type="text" name="FirstName" #FirstName="ngModel" [(ngModel)]="Service.FormData.FirstName" class="form-control" >
+            </div>
+            <div class="form-group  col-md-6">
+                <label>Last Name</label>
+                <input type="text" name="LastName" #LastName="ngModel" [(ngModel)]="Service.FormData.LastName" class="form-control" >
+            </div>
+            
+        </div>
+        <section *ngFor="let ds of dataSource; let i = index;"> -->
+            <!-- input fields inside the *ngFor -->
+            <!-- <label>Subject</label>
+            <select  class="form-control"  #SubjectID="ngModel" [(ngModel)]="Service.FormData.SubjectID" name="Subject">
+                <option *ngFor="let sub of SubjectList" value="{{sub.SubjectID}}">
+                  {{sub.Name}}
+                </option>
+              </select> -->
+               <!-- <label>Address</label>
+               <input type="text" [(ngModel)]="ds.SubjectID" [(ngModel)]="Service.FormData.SubjectID"
+                 name="address_{{i}}"/> -->
+               <!-- <label>Street</label>
+               <input type="text" [(ngModel)]="ds.street"
+                 name="street_{{i}}"/>
+               <label>City</label>
+               <input type="text" [(ngModel)]="address.city"
+                 name="city_{{i}}"/>
+               <label>Country</label>
+               <select [(ngModel)]="address.country" name="country_{{i}}" placeholder="India">
+                     <option value="india">India</option>
+                     <option value="usa">USA</option>
+                      <option value="england">England</option>
+               </select> -->
+         <!-- </section> -->
+  <!--  <div class="form-row subjects" *ngFor="let ds of dataSource">
+
+ 
+        <div class="form-group col-md-6 " >
+            <label>Subject</label>
+            <select  class="form-control"  #SubjectID="ngModel" [(ngModel)]="Service.FormData.SubjectID" name="Subject">
+                <option *ngFor="let sub of SubjectList;index as i;" value="{{sub.SubjectID}}">
+                  {{sub.Name}}
+                </option>
+              </select>
+       
+        </div>
+        <div class="form-group  col-md-6">
+            <label>Marks</label>
+            <input type="text" name="Marks"  #Marks="ngModel"  [(ngModel)]="Service.FormData.Marksf.Marks" class="form-control Marks" >
+        </div> 
+      
+    </div>-->
+    
+    <!-- <button class="btn btn-lg btn-block " (click)='onAddData()'>Add</button>
+  <button type="submit" class="btn btn-lg btn-block btn-primary">Save</button>
+</form> -->
+
+<form novalidate
+          (ngSubmit)="save()"
+          [formGroup]="studentForm">
+
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="firstNameId">First Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="firstNameId"
+                 type="text"
+                 placeholder="First Name (required)"
+                 formControlName="firstName"
+                 [ngClass]="{'is-invalid': (studentForm.get('firstName').touched ||
+                 studentForm.get('firstName').dirty) &&
+                                            !studentForm.get('firstName').valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="studentForm.get('firstName').errors?.required">
+              Please enter your first name.
+            </span>
+            
+          </span>
+        </div>
+      </div>
+      <div class="form-group row mb-2">
+        <label class="col-md-2 col-form-label"
+               for="lastNameId">Last Name</label>
+        <div class="col-md-8">
+          <input class="form-control"
+                 id="lastNameId"
+                 type="text"
+                 placeholder="Last Name (required)"
+                 formControlName="lastName"
+                 [ngClass]="{'is-invalid': (studentForm.get('lastName').touched ||
+                 studentForm.get('lastName').dirty) &&
+                                            !studentForm.get('lastName').valid }" />
+          <span class="invalid-feedback">
+            <span *ngIf="studentForm.get('lastName').errors?.required">
+              Please enter your first name.
+            </span>
+          </span>
+        </div>
+      </div>
+
+      <div formArrayName="marks">
+
+        <div [formGroupName]="i"
+             *ngFor="let ds of marks.controls; let i=index">
+         
+          <div class="form-group row mb-2">
+            <label class="col-md-2 col-form-label"
+                   attr.for="{{'subject' + i}}">Subject</label>
+            <div class="col-md-3">
+              <select class="form-control"
+                      id="{{'subject' + i}}"
+                      formControlName="SubjectID" >
+                <option value=""
+                        disabled
+                        selected
+                        hidden>Select a Subject...</option>
+                <option *ngFor="let sub of SubjectList;index as i;" value="{{sub.SubjectID}}">
+                    {{sub.Name}}
+                    </option>
+              </select>
+            </div>
+            <label class="col-md-2 col-form-label text-right"
+            attr.for="{{'marks' + i}}">Marks</label>
+            <div class="col-md-3">               
+              <input class="form-control"
+                     id="{{'marks' + i}}"
+                     type="text"
+                     placeholder="Marks"
+                     formControlName="Marks">
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="form-group row mb-2">
+        <div class="col-md-4">
+          <button class="btn btn-outline-primary"
+                  type="button"
+                  [title]="marks.valid ? 'Add More' : 'Disabled until the existing '"
+                  [disabled]="!marks.valid"
+                  (click)="addMore()">
+            Add More
+          </button>
+        </div>
+      </div>
+      <div class="offset-md-2 col-md-4">
+        <button class="btn btn-primary mr-3"
+                type="submit"
+                style="width:80px"
+                [title]="studentForm.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                [disabled]="!studentForm.valid">
+          Save
+        </button>
+        </div>
+
+
+</form>

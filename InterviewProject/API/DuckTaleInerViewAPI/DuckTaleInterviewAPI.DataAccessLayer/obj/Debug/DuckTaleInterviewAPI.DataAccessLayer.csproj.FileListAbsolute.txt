@@ -1,0 +1,11 @@
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\bin\Debug\DuckTaleInterviewAPI.DataAccessLayer.dll.config
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\bin\Debug\DuckTaleInterviewAPI.DataAccessLayer.dll
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\bin\Debug\DuckTaleInterviewAPI.DataAccessLayer.pdb
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\bin\Debug\EntityFramework.dll
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.dll
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\bin\Debug\EntityFramework.xml
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\bin\Debug\EntityFramework.SqlServer.xml
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\obj\Debug\DuckTaleInterviewAPI.DataAccessLayer.csproj.CoreCompileInputs.cache
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\obj\Debug\DuckTaleInterviewAPI.DataAccessLayer.csproj.CopyComplete
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\obj\Debug\DuckTaleInterviewAPI.DataAccessLayer.dll
+E:\Ravi Practise\InterviewProject\API\DuckTaleInerViewAPI\DuckTaleInterviewAPI.DataAccessLayer\obj\Debug\DuckTaleInterviewAPI.DataAccessLayer.pdb

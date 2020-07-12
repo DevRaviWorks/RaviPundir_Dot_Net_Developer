@@ -1,0 +1,64 @@
+
+
+<table class="table" >
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">First</th>
+        <th scope="col">Last</th>
+        <th scope="col">Subjects</th>
+
+      </tr>
+    </thead>
+    <tbody *ngFor="let student of studentList; index as j;">
+      <tr>
+        <td scope="row">{{student.StudentID}}</td>
+         <td> <input type="text" value="{{student.FirstName}}" *ngIf="enableEdit && enableEditIndexParent == j"> 
+          <label *ngIf="!enableEdit ">{{student.FirstName}}</label> 
+          </td>        
+        <td ><input type="text" value="{{student.LastName}}" *ngIf="enableEdit && enableEditIndexParent == j"> 
+          <label *ngIf="!enableEdit ">{{student.LastName}}</label> 
+          </td>        
+        <td>
+            <table >
+
+                <tr *ngFor="let marks of student.Marks ; index as i;">
+                    <td style="width: 33.3%;">                      
+                      <select class="form-control"
+                      id="{{'marks.SubjectName' + i}}"
+                       *ngIf="enableEdit && enableEditIndex == i && enableEditIndexParent == j">
+                <option value=""
+                        disabled                        
+                        hidden>Select a Subject...</option>
+                <option *ngFor="let sub of SubjectList;index as i;" value="{{sub.SubjectID}}" >
+                    {{sub.Name}}
+                    </option>
+              </select>
+                      <!-- <input type="text" value="{{marks.SubjectName}}" *ngIf="enableEdit && enableEditIndex == i && enableEditIndexParent == j">   -->
+                      <label *ngIf="!enableEdit ">{{marks.SubjectName}}</label>
+                    </td>
+                    <td style="width: 33.3%;">
+                      <input type="text" value="{{marks.Marks}}" *ngIf="enableEdit && enableEditIndex == i && enableEditIndexParent == j">  
+                      <label *ngIf="!enableEdit ">{{marks.Marks}}</label>
+                       
+                    </td>
+                    <td style="width: 33.3%;">
+                      <button *ngIf="enableEdit && enableEditIndex == i && enableEditIndexParent == j" (click)="enableEdit=false" class="btn page-secondary-action-btn" ng-click="cancel()">Cancel</button>
+                      <button *ngIf="enableEdit && enableEditIndex == i && enableEditIndexParent == j" id="saveBtn" class="btn page-primary-action-btn" (click)="saveSegment(student.FirstName,student.LastName)" type="submit">Save</button>
+                      <a href="#" class="table-row-action edit-action" *ngIf="!enableEdit" (click)="enableEditMethod($event, i,j)">
+                        edit
+                </a>
+                        <!-- <input type="button" value="edit" (click)="EditStudentList(this,marks.SubjectID,student.StudentID)"  /> -->
+                        <input type="button" value="delete"  (click)="DeleteSubject(marks.SubjectID,student.StudentID)" />
+                    </td>
+                    
+                </tr>
+            </table>
+                                   
+           
+        </td>
+      
+        <!-- <td>{{student.FirstName}}</td> -->
+      </tr>
+    </tbody>
+  </table>
